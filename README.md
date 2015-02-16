@@ -1,4 +1,4 @@
-pomoji-web
+Flask template
 ==========
 
 Install locally:
