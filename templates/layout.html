@@ -1,0 +1,33 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="{% block description %}Website description{% endblock %}">
+    <meta name="author" content="My Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="apple-itunes-app" content="app-id=905593401"> -->
+    <!-- <meta property="twitter:account_id" content="1684404530"> -->
+
+    <meta property="og:site_name" content="My Website"/>
+    <meta property="og:title" content="My Website"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="{{ self.description() }}">
+    <meta property="og:url" content="http://mywebsite.com"/>
+    <!-- <meta property="og:image" content="http://pomoji.com/images/facebook-share-image.png"/> -->
+
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    {% assets "scss_all" %}
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+    {% endassets %}
+  </head>
+
+  <body class="{% block body_class %}{% endblock %}">
+    {% block content %}{% endblock %}
+  </body>
+
+  {% assets "js_all" %}
+  <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+</html>
